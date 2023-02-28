@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { person } from "./App"
+import AddPerson from "./AddPerson"
 
 const PersonViewer = () => {
     const [people, setPeople] = useState<person[]>([])
@@ -7,10 +8,11 @@ const PersonViewer = () => {
     useEffect(()=>{
       fetch("http://localhost:3008/person")
       .then((res)=> res.json())
-      .then((person) => setPeople(person))
+      .then((persons) => setPeople(persons))
     })
     return (
       <div>
+        <AddPerson people={people}/>
         <table>
     <tr>
       <th>Name</th>

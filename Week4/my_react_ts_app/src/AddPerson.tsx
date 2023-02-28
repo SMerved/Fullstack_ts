@@ -1,7 +1,9 @@
+import { person } from "./App"
+
 const AddPerson = () => {
     return (
         <div>
-            <button>fds</button>
+            <button>Add Person</button>
         </div>
     )
 }
